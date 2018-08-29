@@ -2,7 +2,14 @@
 title: "Bio381"
 author: "Jessica Cole"
 date: "August 29, 2018"
-output: html_document
+output: 
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: vignette
+    
+  
+    
+  
 ---
 
 
@@ -12,4 +19,4 @@ output: html_document
 
 * [Homework1](testhmw1.rmd)
 
-* 
+
