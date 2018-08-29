@@ -1,0 +1,15 @@
+---
+title: "Bio381"
+author: "Jessica Cole"
+date: "August 29, 2018"
+output: html_document
+---
+
+
+# My homeworks
+
+##Hw1
+
+* [Homework1](testhmw1.rmd)
+
+* second item
