@@ -6,6 +6,7 @@ output:
   prettydoc::html_pretty:
     theme: architect
     highlight: vignette
+
     
   
     
@@ -15,8 +16,14 @@ output:
 
 # My homeworks
 
-##Hw1
+##Hmw1
 
 * [Homework1](testhmw1.rmd)
+
+* Homework 2
+
+* Homework 3
+
+* Homework 4
 
 
