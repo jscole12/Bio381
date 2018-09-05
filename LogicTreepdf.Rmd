@@ -1,0 +1,8 @@
+---
+title: "This is the Logic Tree"
+author: "Jessica Cole"
+date: "September 5, 2018"
+output: html_document
+---
+
+[LogicTree](LogicTree.pdf)
