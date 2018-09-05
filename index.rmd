@@ -18,13 +18,9 @@ output:
 
 ##Hmw1
 
-* [Homework1](testhmw1.rmd)
+* [Homework 1](testhmw1.rmd)
 
-* [Homework2](Pre-graphs.html)
-
-
-* [Logic Tree](logictree.pdf)  
-
+* [Homework 2](Pre-graphs.html)
 
 * Homework 3
 
