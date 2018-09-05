@@ -23,6 +23,9 @@ output:
 * [Homework2](Pre-graphs.html)
 
 
+* [Logic Tree](logictree.pdf)  
+
+
 * Homework 3
 
 * Homework 4
