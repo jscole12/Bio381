@@ -20,7 +20,7 @@ output:
 
 * [Homework1](testhmw1.rmd)
 
-* Homework 2
+* [Homework2](Logictree.Rmd)
 
 * Homework 3
 

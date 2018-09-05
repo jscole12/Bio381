@@ -1,0 +1,12 @@
+---
+title: "Logic Tree"
+author: "Jessica Cole"
+date: "September 5, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+[Logic Tree](Logictree.pdf)
