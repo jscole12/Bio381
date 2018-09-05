@@ -20,7 +20,8 @@ output:
 
 * [Homework1](testhmw1.rmd)
 
-* [Homework2](Logictree.pdf)
+* [Homework2](Pre-graphs.html)
+
 
 * Homework 3
 

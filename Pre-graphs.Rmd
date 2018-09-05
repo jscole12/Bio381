@@ -1,0 +1,33 @@
+---
+title: "Pre-graph"
+author: "Jessica Cole"
+date: "September 5, 2018"
+output: html_document
+---
+
+```{r}
+x<-c(0.1, 0.2,0.3,0.4,0.5)
+y<-c(1, 2, 3, 4, 5)
+plot(x=x, y=y, type="b", main="Viral Load on Foraging Of Nutrients",
+     xlab="Viral Load Quantity",ylab="Hours")
+```
+
+```{r}
+x<-c(0.1, 0.2,0.3,0.4,0.5)
+y<-c(1.5, 2.5, 3.5, 4.5, 5)
+plot(x=x, y=y, type="b", main="Viral Load on Foraging",
+     xlab="Viral Load Quantity",ylab="Hours")
+```
+
+```{r}
+x<-c(0.1, 0.2,0.3,0.4,0.5)
+y<-c(5, 4, 3, 2, 1)
+plot(x=x, y=y, type="b", main="Viral Load on Foraging of Carbohydrates",
+     xlab="Viral Load Quantity",ylab="Hours")
+```
+
+
+The graph shows the expected relationship between viral load and time individual bees spend foraging. As viral load is increased, the time spent foraging is increased as well. However, when exploring the individual relationships, there are different relationships depending on the resource. When viral load increased foraging for carbohydrates decreased. However, when viral load increased, the foraging for nutriets increased.
+
+
+[LogicTree](Logictree.html)
