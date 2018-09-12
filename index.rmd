@@ -22,7 +22,7 @@ output:
 
 * [Homework 2](Pre-graphs.html)
 
-* Homework 3
+* [Homework 3](BeamerPresentation.pdf)
 
 * Homework 4
 
