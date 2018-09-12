@@ -1,0 +1,58 @@
+---
+title: "Beamer Presentation"
+author: "Jessica Cole"
+date: "September 12, 2018"
+output: 
+  beamer_presentation: 
+    colortheme: seahorse
+    fonttheme: serif
+---
+
+## Things I Love
+- Music
+- \color {purple}Cats
+- \color {black}Cheese
+- \color {purple}Steven Universe
+- \color {black}Bees, Trees and Plants
+
+
+## Places I visited
+> - South: Alabama, Georgia, Florida, Lousiana,
+> - East: California
+> - Mideast?: Iowa
+> - North: New york, Vermont
+
+
+## Amazing picture of the Circle at Ole Miss
+
+ \begin{picture}(320,250)
+ \put(00,50){\includegraphics[height=6cm]{oldhome.jpg}}
+ \put(00,50){\begin{minipage}[t]{1\linewidth}
+ \end{minipage}}
+ \end{picture}
+ 
+## My New Life in Vermont
+
+ \begin{picture}(320,250)
+ \put(35,75){\includegraphics[height=5cm]{EverythingInBetween.jpg}}
+ \put(165,75){\includegraphics[height=5cm]{NewHome-Vermont.jpg}}
+  \put(00,60){\begin{minipage}[t]{1\linewidth}
+ {After much deliberation, anxiety, and worry, I decided to go to UVM. Have I regretted it? Not yet so far. However, I still go through culture shock and look foreward to visiting home.}
+ \end{minipage}}
+ \end{picture}
+ 
+## Bumbless have my heart)
+
+ \begin{picture}(320,250)
+ \put(0,50){\includegraphics[height=6cm]{bumblebee.jpg}}
+ \put(180,180){\begin{minipage}[t]{0.4\linewidth}
+ {I love these little critters to death. So of course I was going to add a picture of a bee. I came to UVM to study bees and their relationships with plants.}
+ \end{minipage}}
+ \end{picture}
+ 
+
+
+
+ 
+
+
