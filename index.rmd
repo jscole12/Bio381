@@ -18,14 +18,14 @@ output:
 
 ##Hmw1
 
-* [Homework 1](testhmw1.rmd)
+* [Week 1 - Getting to Know Github](testhmw1.rmd)
 
-* [Homework 2](Pre-graphs.html)
+* [Week 2 - Exploring on Paper](Pre-graphs.html)
 
-* [Homework 3](BeamerPresentation.pdf)
+* [Week 3 - Beamer Presenation](BeamerPresentation.pdf)
 
-* Homework 4
+* Week 4
 
-* Homework 5
+* Week 5
 
 
