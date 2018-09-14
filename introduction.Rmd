@@ -1,0 +1,23 @@
+---
+title: "Getting to Know Github"
+author: "Jessica Cole"
+date: "September 14, 2018"
+output: html_document
+---
+
+# This is a a test document to get familiar with Rmarkdown and such.
+
+## Is it working?
+
+###Yes
+
+> You try, You fail, You try, You fail... but the only true failure is when you stop trying
+
+#Classes I am taking
+* Computational Biology
+* Behavioral Ecology
+* Graduate Seminar
+* BioLunch
+* QuEST Seminar
+
+I Love Bees, Trees, and Plants!
