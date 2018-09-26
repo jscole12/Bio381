@@ -29,7 +29,8 @@ plot(x=x, y=y, type="b", main="Viral Load on Foraging of Carbohydrates",
 
 The graph shows the expected relationship between viral load and time individual bees spend foraging. As viral load is increased, the time spent foraging is increased as well. However, when exploring the individual relationships, there are different relationships depending on the resource. When viral load increased foraging for carbohydrates decreased. However, when viral load increased, the foraging for nutriets increased.
 
+## Logic Tree Below
 
-The following is a logic tree following the path from the main question to the basic answers.
+The link below will take you to my logic tree that follows the path from the main question to the basic answers. 
 
 [LogicTree](LogicTreepdf.pdf)
