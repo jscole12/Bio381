@@ -26,7 +26,7 @@ output:
 
 * [Week 4 - Vectors in R and Regular Expressions](VectorsinRandRegularExpressions.html) 
 
-* Week 5
+* [Week 5 - Manipulating data using dplyr](Dplyrhw.Rmd)
 
 * Week 6
 
