@@ -28,6 +28,10 @@ output:
 
 * [Week 5 - Manipulating data using dplyr](Dplyrhw.html)
 
-* Week 6
+* [Week 6 - Data Distributions](Datadistributions.html)
+
+* [Week 6 - Data Distributions continued](simulatedcatdata.html)
+
+
 
 

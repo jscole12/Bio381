@@ -1,0 +1,26 @@
+---
+title: "DataDistributions"
+author: "Jessica Cole"
+date: "October 3, 2018"
+output: html_document
+---
+
+
+```{r}
+# Long and wide data formats
+library(tidyverse)
+data(iris)
+print(iris)
+
+iris <- gather(iris, Sepal.Length,Sepal.Width,Petal.Length,Petal.Width, key="Trait", value="measurement") 
+print(iris)
+
+iris%>%
+  group_by(Species,Trait) %>%
+  summarize(Avgiris=mean(measurement)) %>%
+  print(iris)
+
+
+
+```
+

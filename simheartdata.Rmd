@@ -1,0 +1,35 @@
+---
+title: "Gamma Distribution"
+author: "Jessica Cole"
+date: "October 3, 2018"
+output: html_document
+---
+
+```{r}
+library(ggplot2) # for graphics
+library(MASS)
+
+z <- read.table("catsM.csv",header=TRUE,sep=",", stringsAsFactors=FALSE)
+names(z) <- list("ID","myVar")
+str(z)
+summary(z)
+
+p1 <- ggplot(data=z, aes(x=myVar, y=..density..)) +
+  geom_histogram(color="grey60",fill="cornsilk",size=0.2) 
+print(p1)
+
+p1 <-  p1 +  geom_density(linetype="dotted",size=0.75)
+print(p1)
+
+ gammaPars <- fitdistr(z$myVar,"gamma")
+shapeML <- gammaPars$estimate["shape"]
+print(shapeML)
+rateML <- gammaPars$estimate["rate"]
+print(rateML)
+
+length(z$myVar)
+p1 <- ggplot(data=simheartmass, aes(x=myVar, y=..density..)) +
+  geom_histogram(color="grey60",fill="cornsilk",size=0.2) 
+print(p1)
+```
+

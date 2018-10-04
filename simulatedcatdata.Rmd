@@ -1,0 +1,40 @@
+---
+title: "Simulated Data"
+author: "Jessica Cole"
+date: "October 3, 2018"
+output: html_document
+---
+
+```{r}
+# simulated data
+
+library(ggplot2) 
+library(MASS)
+
+simheartmass <- rgamma(97, 20.36202, rate = 1.79834)
+print(simheartmass)
+simheartmass <- data.frame(id=1:97,myVar=simheartmass)
+p1 <- ggplot(data=simheartmass, aes(x=myVar, y=..density..)) +
+  geom_histogram(color="grey60",fill="cornsilk",size=0.2) 
+print(p1)
+p1 <-  p1 +  geom_density(linetype="dotted",size=0.75)
+print(p1)
+```
+
+```{r}
+library(ggplot2) 
+library(MASS)
+
+z <- read.table("catsM.csv",header=TRUE,sep=",", stringsAsFactors=FALSE)
+names(z) <- list("ID","myVar")
+str(z)
+summary(z)
+p1 <- ggplot(data=z, aes(x=myVar, y=..density..)) +
+  geom_histogram(color="grey60",fill="cornsilk",size=0.2) 
+print(p1)
+p1 <-  p1 +  geom_density(linetype="dotted",size=0.75)
+print(p1)
+
+```
+
+The simulation data graph is similar to the original data. The extremes are still present in both graphs, extending the empiral data line. However, the data in the similuated graph is slightly different with less identical variants.
