@@ -32,6 +32,9 @@ output:
 
 * [Week 6 - Data Distributions continued](simulatedcatdata.html)
 
+* [Week 7 - Simulating Fake data](CreatingFakeDataSetstoExploreHypotheses.html)
+
+
 
 
 

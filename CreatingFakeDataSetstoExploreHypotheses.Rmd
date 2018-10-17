@@ -1,0 +1,44 @@
+---
+title: "Creating Fake Data Sets to Explore Hypotheses"
+author: "Jessica Cole"
+date: "October 10, 2018"
+output: html_document
+---
+
+```{r}
+
+library(tidyverse) 
+
+# Variable and random number assignment
+BBhealthy <- rnorm(10, mean=56, sd=14)
+BBhealthy
+
+BBunhealthy <-rnorm(10, mean=45, sd=14) 
+BBunhealthy
+
+# Creating a data frame for data and putting it into long format
+BBData<-data.frame(BBhealthy, BBunhealthy)
+BBData2 <- gather(BBData, BBhealthy, BBunhealthy, key = "Lifespan", value="days")
+BBData2
+
+#Using ANOVA to analyze data
+AOVmodel <- aov(days~Lifespan, data=BBData2)
+summary(AOVmodel)
+
+# Plotting the data collected from ANOVA
+ANOplot <- ggplot(data=BBData2,
+                  aes(x=Lifespan,y=days,
+                      fill=Lifespan)) +
+  geom_boxplot()
+ANOplot
+
+# 6 After adjusting the means of the different groups, i saw that a difference of at least 5 in the mean kept the data from having overlap, with the exception of extreme values. 
+
+#7 The original samples size for the values was 25. After inputing gradually decreasing values and running the analysis, i was able to see that a sample size of 9 was the minimun sample size needed for the results to still be significant.
+
+#8 The data that I was simulating was categorical by continuous which is why I chose to use ANOVA to examine the data. The means and sample size were calculated by determining the minimum amount of data needed to justify significant results. If you have a smaller sample size however, the mean difference must be greater. There was an odd patter of as the means got closer to each other, the values were not significant. This observation was observed between the fram of 1-4 mean difference. When there was a difference of 1-2 or greater than 4, the data was significant based on the p-value. 
+
+
+
+```
+
