@@ -19,7 +19,7 @@ getData <- function(fileName=NULL){
   }
 
 return(dataFrame)
-  getData()
+ 
   
 }
 ##############
@@ -50,7 +50,6 @@ summarizeoutput <- function(z=NULL){
 return(z$residuals)
   
   
-  return("summarizeoutput is working")
 }
 #------------------------
 
@@ -72,7 +71,7 @@ graphResults <- function(xVar=runif(10), yVar=runif(10)){
 
 }
 #-----------------
-fitRegressionModel()
-summarizeoutput()
-getData()
-graphResults()
+# fitRegressionModel()
+# summarizeoutput()
+# getData()
+# graphResults()

@@ -1,0 +1,8 @@
+---
+title: "Homework 2"
+author: "Jessica Cole"
+date: "August 29, 2018"
+output: html_document
+---
+
+###this is Homework 2

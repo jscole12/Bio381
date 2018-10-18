@@ -1,0 +1,24 @@
+---
+title: "Test"
+author: "Jessica Cole"
+date: "August 29, 2018"
+output: 
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
+  
+
+  
+---
+
+* [Homework1](homework.rmd)
+  
+* [Homework 2](homework2.Rmd)
+
+* [Homework 3](homework3.Rmd)
+
+* [Homework 4](homework4.rmd)
+
+PS : The bees knees
+
+ * [thebeesknees](http://www.thebeesknees.com/)
