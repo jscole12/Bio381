@@ -1,0 +1,160 @@
+---
+title: "Organizing Code with Structured Programming"
+author: "Jessica Cole"
+date: "October 17, 2018"
+output: html_document
+---
+
+```{r}
+##############
+# FUNCTION: Put data into data frame
+# INPUTS: file name with specified independent and dependent variables
+# OUTPUTS: Data frame
+#----------------
+getData <- function(fileName=NULL){
+  if(is.null(fileName)) {
+    dataFrame <- data.frame(ID=101:110,
+                            varA=runif(10),
+                            varB=runif(10))
+  } else {
+    dataFrame <- read.table(file=fileName,
+                            header=TRUE,
+                            sep=",",
+                            stringsAsFactors=FALSE)
+  }
+
+return(dataFrame)
+}
+# if data file is loaded in, it needs to be a csv file for read.table to be able to read it.
+getdata(data)
+dataFrame
+#----------------------
+dataFrame <- getData()
+getData("getData.csv")
+data <- getData("getData.csv")
+data <- dataFrame
+
+##############
+# FUNCTION: Analyze data using ANOVA
+# INPUTS: Data and contrasts or the things that will be put into the function that will be analylzed.
+# OUTPUTS: Summary of variables. Most important it will give you the p value. From there you should be able to determine if the differences in your data are significant or not.
+#----------------
+analyzeData <- function(data=dataFrame){
+  y=data[,2]
+  x=data[,1]
+  ANOVA <- aov(y~x,data=data)
+ 
+    
+
+
+return(summary(ANOVA))
+}
+#----------------
+analyzeData()
+
+
+##############
+# FUNCTION: Graph data based on ANOVA ( categorical by continuous) analysis
+# INPUTS: Data in a data frame
+# OUTPUTS: Boxplot
+#----------------
+graphResults <- function(x=data$Independent, y=data$Dependent){
+  dataFrame2 <- data.frame(varA=data$varA,varB=data$varB)
+  graph <- qplot(data=data,
+              x=x,
+              y=y,
+              geom=c("smooth","point"))
+  print(graph)
+  
+  
+
+
+
+return(graph)
+}
+#----------------
+
+
+getData()
+analyzeData()
+graphResults()
+getData("getData.csv")
+dataFrame<-getData("getData.csv")
+analyzeData(data)
+graphResults()
+
+
+
+
+
+# to test out my functions with different data, I edited out the original csv file and let it simulate random data. 
+##############
+# FUNCTION: Put data into data frame
+# INPUTS: file name with specified independent and dependent variables
+# OUTPUTS: Data frame
+#----------------
+getData2 <- function(fileName=NULL){
+  if(is.null(fileName)) {
+    dataFrame <- data.frame(ID=1:50,
+                            varA=runif(25),
+                            varB=runif(25))
+  } else {
+    dataFrame <- read.table(file=fileName,
+                            header=TRUE,
+                            sep=",",
+                            stringsAsFactors=FALSE)
+  }
+
+return(dataFrame)
+}
+# if data file is loaded in, it needs to be a csv file for read.table to be able to read it.
+
+#----------------------
+
+
+##############
+# FUNCTION: Analyze data using ANOVA
+# INPUTS: Data and contrasts or the things that will be put into the function that will be analylzed.
+# OUTPUTS: Summary of variables. Most important it will give you the p value. From there you should be able to determine if the differences in your data are significant or not.
+#----------------
+analyzeData2 <- function(data=dataFrame2){
+  y=data[,2]
+  x=data[,1]
+  ANOVA <- aov(y~x,data=data)
+ 
+    
+
+
+return(summary(ANOVA))
+}
+#---------------
+
+
+##############
+# FUNCTION: Graph data based on ANOVA ( categorical by continuous) analysis
+# INPUTS: Data in a data frame
+# OUTPUTS: Boxplot
+#----------------
+graphResults2 <- function(data=dataFrame2){
+  dataFrame2 <- data.frame(varA=data$varA,varB=data$varB)
+  graph <- qplot(data=data,
+              x=varA,
+              y=varB,
+              geom=c("smooth","point"))
+  print(graph)
+  
+  
+
+
+
+return(graph)
+}
+#----------------
+getData2()
+dataFrame2 <-getData2()
+analyzeData2()
+graphResults2()
+
+```
+
+
