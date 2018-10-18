@@ -26,13 +26,9 @@ getData <- function(fileName=NULL){
 return(dataFrame)
 }
 # if data file is loaded in, it needs to be a csv file for read.table to be able to read it.
-getdata(data)
-dataFrame
 #----------------------
-dataFrame <- getData()
-getData("getData.csv")
-data <- getData("getData.csv")
-data <- dataFrame
+dataFrame <-getData()
+
 
 ##############
 # FUNCTION: Analyze data using ANOVA
@@ -43,48 +39,30 @@ analyzeData <- function(data=dataFrame){
   y=data[,2]
   x=data[,1]
   ANOVA <- aov(y~x,data=data)
- 
-    
-
 
 return(summary(ANOVA))
 }
-#----------------
-analyzeData()
-
+#---------------
 
 ##############
 # FUNCTION: Graph data based on ANOVA ( categorical by continuous) analysis
 # INPUTS: Data in a data frame
 # OUTPUTS: Boxplot
-#----------------
-graphResults <- function(x=data$Independent, y=data$Dependent){
+##############
+graphResults <- function(data=dataFrame){
   dataFrame2 <- data.frame(varA=data$varA,varB=data$varB)
   graph <- qplot(data=data,
-              x=x,
-              y=y,
+              x=varA,
+              y=varB,
               geom=c("smooth","point"))
   print(graph)
-  
-  
-
-
 
 return(graph)
 }
 #----------------
-
-
 getData()
 analyzeData()
 graphResults()
-getData("getData.csv")
-dataFrame<-getData("getData.csv")
-analyzeData(data)
-graphResults()
-
-
-
 
 
 # to test out my functions with different data, I edited out the original csv file and let it simulate random data. 
@@ -108,8 +86,8 @@ getData2 <- function(fileName=NULL){
 return(dataFrame)
 }
 # if data file is loaded in, it needs to be a csv file for read.table to be able to read it.
-
 #----------------------
+dataFrame2 <-getData2()
 
 
 ##############
@@ -129,7 +107,7 @@ return(summary(ANOVA))
 }
 #---------------
 
-
+library(ggplot2)
 ##############
 # FUNCTION: Graph data based on ANOVA ( categorical by continuous) analysis
 # INPUTS: Data in a data frame
@@ -151,10 +129,32 @@ return(graph)
 }
 #----------------
 getData2()
-dataFrame2 <-getData2()
 analyzeData2()
 graphResults2()
+
+
+# # I also ran the functions with data from an excel sheet. The following steps show the differencec i needed to make.
+# Get Data:
+# insert datafile
+# getData("getData.csv")
+# dataFrame<-getData("getData.csv")
+# 
+# Analyze Data:
+# function(data=csvdata) # change the data file
+# 
+# Graph Results
+# Insert the right data file table created from data. Define youre x and y based on columns already named. Create that as a dataframe. input the correct x and y.
+# graphResultswithExcel <- function(data=csvdata){
+#   csvdataFrame <- data.frame(x=csvdata$Independent,y=csvdata$Dependent)
+#   graph <- qplot(data=csvdataFrame,
+#                  x=x,
+#                  y=y,
 
 ```
 
 
+
+
+
+getData("getData.csv")
+dataFrame<-getData("getData.csv")
