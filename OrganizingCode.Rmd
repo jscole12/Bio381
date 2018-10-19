@@ -11,6 +11,8 @@ output: html_document
 # INPUTS: file name with specified independent and dependent variables
 # OUTPUTS: Data frame
 #----------------
+
+library(ggplot2)
 getData <- function(fileName=NULL){
   if(is.null(fileName)) {
     dataFrame <- data.frame(ID=101:110,
@@ -107,7 +109,6 @@ return(summary(ANOVA))
 }
 #---------------
 
-library(ggplot2)
 ##############
 # FUNCTION: Graph data based on ANOVA ( categorical by continuous) analysis
 # INPUTS: Data in a data frame
@@ -149,6 +150,10 @@ graphResults2()
 #   graph <- qplot(data=csvdataFrame,
 #                  x=x,
 #                  y=y,
+
+
+# getData("getData.csv")
+# dataFrame<-getData("getData.csv")
 
 ```
 
