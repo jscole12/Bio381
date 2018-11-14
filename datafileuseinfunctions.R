@@ -55,8 +55,8 @@ library(ggplot2)
 # OUTPUTS: Boxplot
 ##############
 graphResultswithExcel <- function(data=csvdata){
-  csvdataFrame <- data.frame(x=csvdata$Independent,y=csvdata$Dependent)
-  graph <- qplot(data=csvdataFrame,
+  csvdataFrame <- data.frame(x=data$Independent,y=data$Dependent)
+  graph <- qplot(data=nData,
                  x=x,
                  y=y,
                  geom=c("smooth","point"))

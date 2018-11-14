@@ -36,6 +36,12 @@ output:
 
 * [Week 8 - Organizing Code with structured Programming](OrganizingCode.html)
 
+* [Week 9 & 10 - For loops and randomization tests](RandomizationTestHW.html)
+
+
+
+
+
 
 
 
