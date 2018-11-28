@@ -40,7 +40,8 @@ output:
 
 * [week 11 - Advanced GGPloting]
 
-*[Final Presentation](app.R)
+* [Week 12 - Final Presentation](shinyscript.html)
+
 
 
 

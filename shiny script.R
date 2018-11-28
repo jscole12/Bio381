@@ -1,15 +1,3 @@
----
-title: "shinyscript"
-author: "Jessica Cole"
-date: "November 28, 2018"
-output:
-  html_document: default
-  word_document: default
-  pdf_document: default
-runtime: shiny
----
-
-```{r}
 # Shiny App
 # November 28 2018
 # JSC
@@ -38,7 +26,7 @@ runtime: shiny
 # 
 # #Run the app ----
 # shinyApp(ui=ui,server = server)
-  
+
 
 library(shiny)
 
@@ -88,7 +76,7 @@ ui <- fluidPage(
 
 # 
 server <- function(input,output){
-
+  
   # combine the selected variables into new data frame
   selectedData <- reactive({
     trees[,c(input$X,input$Y)]
@@ -100,25 +88,23 @@ server <- function(input,output){
     # basic plot function thats built into r
     plot(selectedData(),
          
-# type refers how the data is shown: p - points, l - lines, b - both
+         # type refers how the data is shown: p - points, l - lines, b - both
          type = "p",
-
-# change point:using pch values stored in 'plot' function. 21.25 - color and fill points, 19 - solid circle, only need col for color
+         
+         # change point:using pch values stored in 'plot' function. 21.25 - color and fill points, 19 - solid circle, only need col for color
          pch = 21.25, 
          col = "black",
          bg = "blue",
-
-# add a main title to graph
-         main = "This is the main title of the Graph",
-
-# add a subtitle as a caption
-         sub = "this is the subtitle for the plot. A good way to add a caption below the graph")
          
+         # add a main title to graph
+         main = "This is the main title of the Graph",
+         
+         # add a subtitle as a caption
+         sub = "this is the subtitle for the plot. A good way to add a caption below the graph")
+    
   }
   )
 }
-  
+
 # call to shiny app
 shinyApp(ui=ui,server=server)
-```
-
