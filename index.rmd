@@ -38,6 +38,10 @@ output:
 
 * [Week 9 & 10 - For loops and randomization tests](RandomizationTestHW.html)
 
+* [week 11 - Advanced GGPloting]
+
+*[Final Presentation](app.R)
+
 
 
 
