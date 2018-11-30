@@ -38,7 +38,7 @@ output:
 
 * [Week 9 & 10 - For loops and randomization tests](RandomizationTestHW.html)
 
-* [week 11 - Advanced GGPloting](advancedggplot.html)
+* [Week 11 - Advanced GGPloting](advancedggplot.html)
 
 * [Week 12 - Final Presentation](shinyscript.html)
 
