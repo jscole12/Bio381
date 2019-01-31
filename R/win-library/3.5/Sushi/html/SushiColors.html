@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Generates a Sushi color palette</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for SushiColors {Sushi}"><tr><td>SushiColors {Sushi}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Generates a Sushi color palette</h2>
+
+<h3>Description</h3>
+
+<p>Generates a Sushi color palette
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+SushiColors(palette = "fire")
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>palette</code></td>
+<td>
+<p>The name of the Sushi palette to return.  For list of available palettes try (SushiColors(list))</p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+plot(1,xlab='',xaxt='n',ylab='',yaxt='n',xlim=c(0,8),ylim=c(2,8),type='n',bg="grey")
+for (i in (2:7))
+{
+  points(x=(1:i),y=rep(i,i),bg=SushiColors(i)(i),cex=3,pch=21)
+
+}
+
+axis(side=2,at=(2:7),labels=(2:7),las=2)
+axis(side=1,at=(1:7),labels=(1:7))
+mtext("SushiColors",side=3,font=2, line=1, cex=1.5)
+mtext("colors",side=1,font=2, line=2)
+mtext("palette",side=2,font=2, line=2)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>Sushi</em> version 1.20.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

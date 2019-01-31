@@ -1,0 +1,188 @@
+leafletR 0.4-0 [2016-04-01]
+---------------------------
+
+* bug fixes in leaflet: broken legend in case of multi-layer maps
+  including markers; 
+  incl.data ignored for last layer added to map (or if only one 
+  data layer is added);
+  error if title contains certain non alphanumeric characters
+
+* new in leaflet: argument "label" added for basic label support
+  (only working with point data)
+
+* new in styleCat: style.par parameter dropped
+
+* new in styleGrad: multi-style support including legend - all 
+  three style types can be combined on a map now
+
+* new in toGeoJSON: tbl_df support; lat/lon detection 
+  by variable name
+
+* update to Leaflet version 0.7.7
+
+* several improvements of code and documentation
+
+
+leafletR 0.3-3 [2015-05-30]
+---------------------------
+
+* bug fix in leaflet: arguments "zoom" + "center" not working 
+  in case of unused "data" argument
+
+* bug fix in styleSingle: marker support
+
+* new in styleSingle: marker styling using maki markers; 
+  marker legend support
+
+* new in leaflet: maps without a base map 
+
+* new in toGeoJSON: line breaks replacement in data frames; 
+  factor-to-character conversion
+
+* new in styleGrad: argument "right" changed to "closure"; 
+  classInterval objects support ("breaks" argument);
+  findColours objects support ("style.val" argument)
+
+* removal of unnecessary CSS from resulting html
+
+
+leafletR 0.3-2 [2015-04-09]
+---------------------------
+
+* bug fix in leaflet: base map mix-up
+
+* styleCat, styleGrad, toGeoJSON: error messages added
+
+* bug fixes internal templates: border color/fill color mix-up;
+  invalid variable names with dot notation; fill=NA not 
+  recognized in legend
+
+* new base maps added: CartoDB Positron/Dark matter
+
+* new in singleStyle: simple marker support
+
+* new in leaflet: map view now fits to multi layer bounds
+
+* improvements of documentation and examples
+
+
+leafletR 0.3-1 [2014-10-23]
+---------------------------
+
+* bug fix in getProperties/leaflet: possible popup error 
+  in case of data files without properties
+  
+* bug fixes in templates: broken legend in some cases; 
+  no base map layer control if data is missing
+
+* bug fix in addBaseMap: options now really optional
+  
+* new argument "controls" in leaflet: show/hide map controls
+
+* new in leaflet: TopoJSON support added
+
+* new map features: layer control now contain data layers;
+  scale bar support
+
+
+leafletR 0.3-0 [2014-09-12]
+---------------------------
+
+* rewrite of leaflet: maps now generated using brew and templates;
+  RJSONIO dependency replaced by jsonlite 
+
+* new function addBaseMap: add custom base maps
+
+* print method for leaflet: view your map even faster by typing
+  map object name
+  
+* update to Leaflet version 0.7.3
+
+* bug fixes in leaflet: failed for style lists; bad detection of
+  wrong styles
+
+* bug fix in styleCat/styleGrad/styleSingle: printing failed
+
+* bug fix in toGeoJSON: failed for data frames with three columns
+
+
+leafletR 0.2-1 [2014-07-09]
+---------------------------
+
+* bug fixes in leaflet: base.map check + overwriting data file(s) 
+  in map directory + no map in case of multiple base maps with one
+  singleStyle layer + dot separated data file names denied
+  
+* bug fixes in styleSingle: some arguments failed as exclusive
+  argument
+
+* leaflet: legend for maps with more than one singleStyle layer
+
+* print methods added for styles
+
+
+leafletR 0.2-0 [2014-04-28]
+---------------------------
+
+* bug fix in styleGrad: broken legend in some cases
+
+* bug fix in leaflet: no map display in case of multiple included
+  data layers
+
+* new function getProperties: prints names of properties 
+  available in GeoJSON file (RJSONIO package required)
+
+* leaflet: GeoJSON validation added (RJSONIO package required)
+
+* leaflet: CloudMade tiles removed (not free anymore)
+
+* toGeoJSON: spatial objects (sp) support added
+
+* internal functions improved/fixed
+
+
+leafletR 0.1-2 [2014-03-13]
+---------------------------
+
+* update to Leaflet v0.7.2
+
+* bug fix in styleCat/styleGrad/styleSingle: color conversion 
+  failed in some cases
+
+* leaflet: new base maps added + attribution of maps
+  improved
+
+* leaflet: popups now work for more than one data layer 
+  and multiple properties
+
+* new argument "style.par" in catStyle/gradStyle: categorized
+  or graduated radii can now be applied to point data
+
+
+leafletR 0.1-1 [2014-01-28]
+---------------------------
+
+* bug fix in leaflet: internal function parameter confusion
+
+* bug fix in leaflet/toGeoJSON: incorrect file path returned 
+  under Windows
+
+* new argument "incl.data" in leaflet: data can now be included 
+  in the HTML file itself (e.g. for Google Chrome and Opera 
+  browser support)
+
+* new argument "overwrite" in leaflet/toGeoJSON: replaces user 
+  input, required if file already exists
+  
+* new argument "leg" in styleCat/styleGrad: legend title
+  
+* leaflet/toGeoJSON: spaces replaced with underscores in output 
+  file names 
+
+* leaflet: default map title now taken from data file name
+
+
+leafletR 0.1-0 [2014-01-20]
+---------------------------
+
+* This is the first version

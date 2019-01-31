@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: maps numeric vector to color palette</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for maptocolors {Sushi}"><tr><td>maptocolors {Sushi}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>maps numeric vector to color palette</h2>
+
+<h3>Description</h3>
+
+<p>maps numeric vector to color palette
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+maptocolors(vec, col, num = 100, range = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>vec</code></td>
+<td>
+<p>numeric vector to map to color</p>
+</td></tr>
+<tr valign="top"><td><code>col</code></td>
+<td>
+<p>color palette to which to be mapped</p>
+</td></tr>
+<tr valign="top"><td><code>num</code></td>
+<td>
+<p>number of bins of colors</p>
+</td></tr>
+<tr valign="top"><td><code>range</code></td>
+<td>
+<p>range of values to map</p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+plot((1:10),col=maptocolors(vec=(1:10),colorRampPalette(c("blue","red"))),pch=19,cex=4)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>Sushi</em> version 1.20.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

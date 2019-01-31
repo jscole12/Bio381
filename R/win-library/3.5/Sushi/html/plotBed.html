@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: plots data stored in bed file format</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for plotBed {Sushi}"><tr><td>plotBed {Sushi}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>plots data stored in bed file format</h2>
+
+<h3>Description</h3>
+
+<p>plots data stored in bed file format
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+plotBed(beddata, chrom, chromstart, chromend, type = "region",
+  colorby = NULL, colorbycol = NULL, colorbyrange = NULL,
+  rownumber = NULL, row = "auto", height = 0.4, plotbg = "white",
+  wiggle = 0.02, splitstrand = FALSE, numbins = 200, binsmoothing = 10,
+  palettes = topo.colors, rowlabels = NULL, rowlabelcol = "dodgerblue2",
+  rowlabelfont = 2, rowlabelcex = 1, maxrows = 1e+06,
+  color = "dodgerblue4", xaxt = "none", yaxt = "none", xlab = "",
+  ylab = "", xaxs = "i", yaxs = "i", bty = "n", border = NA, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>beddata</code></td>
+<td>
+<p>genomic data to be plotted (in bed format)</p>
+</td></tr>
+<tr valign="top"><td><code>chrom</code></td>
+<td>
+<p>chromosome of region to be plotted</p>
+</td></tr>
+<tr valign="top"><td><code>chromstart</code></td>
+<td>
+<p>start position</p>
+</td></tr>
+<tr valign="top"><td><code>chromend</code></td>
+<td>
+<p>end position</p>
+</td></tr>
+<tr valign="top"><td><code>type</code></td>
+<td>
+<p>type of plot ('region','circles','density')</p>
+</td></tr>
+<tr valign="top"><td><code>colorby</code></td>
+<td>
+<p>vector to scale colors by</p>
+</td></tr>
+<tr valign="top"><td><code>colorbycol</code></td>
+<td>
+<p>palette to apply color scale to (only valid when colorby is not NULL)</p>
+</td></tr>
+<tr valign="top"><td><code>colorbyrange</code></td>
+<td>
+<p>the range of values to apply the color scale to.  Values outside that range will be set to the limits of the range.</p>
+</td></tr>
+<tr valign="top"><td><code>rownumber</code></td>
+<td>
+<p>vector giving the row numbers of each bed element to be plotted.</p>
+</td></tr>
+<tr valign="top"><td><code>row</code></td>
+<td>
+<p>How row number should be determined.  Appropriate values are 'auto' or 'supplied'</p>
+</td></tr>
+<tr valign="top"><td><code>height</code></td>
+<td>
+<p>Value, typically between 0 and 1, that sets the height of each bed element</p>
+</td></tr>
+<tr valign="top"><td><code>plotbg</code></td>
+<td>
+<p>The background color of the plot</p>
+</td></tr>
+<tr valign="top"><td><code>wiggle</code></td>
+<td>
+<p>the fraction of the plot to leave blank on either side of each element to avoid overcrowding.</p>
+</td></tr>
+<tr valign="top"><td><code>splitstrand</code></td>
+<td>
+<p>TRUE/FALSE indicating whether reverse strnad bed elements shold be plotted below the x axis.  (only valid when row is set to 'auto')</p>
+</td></tr>
+<tr valign="top"><td><code>numbins</code></td>
+<td>
+<p>The number of bins to divide the region into when type is set to density (only valid when type is set to 'density')</p>
+</td></tr>
+<tr valign="top"><td><code>binsmoothing</code></td>
+<td>
+<p>umber of bins to sum together when type is set to density  (only valid when type is set to 'density')</p>
+</td></tr>
+<tr valign="top"><td><code>palettes</code></td>
+<td>
+<p>list of color palettes used for density plots.  Each row can have a unique palette.  number of palettes is less than the number of rows then only the first palette is used (only valid when type is set to 'density')</p>
+</td></tr>
+<tr valign="top"><td><code>rowlabels</code></td>
+<td>
+<p>labels for the y-axis</p>
+</td></tr>
+<tr valign="top"><td><code>rowlabelcol</code></td>
+<td>
+<p>color of the y-axis labels</p>
+</td></tr>
+<tr valign="top"><td><code>rowlabelfont</code></td>
+<td>
+<p>font of the y-axis labels</p>
+</td></tr>
+<tr valign="top"><td><code>rowlabelcex</code></td>
+<td>
+<p>font size of the y-axis labels</p>
+</td></tr>
+<tr valign="top"><td><code>maxrows</code></td>
+<td>
+<p>The maximum number of rows to plot on the y-axis</p>
+</td></tr>
+<tr valign="top"><td><code>color</code></td>
+<td>
+<p>single color or vector of colors to use to plot the points or regions (not valid when type is set to 'density')</p>
+</td></tr>
+<tr valign="top"><td><code>xaxt</code></td>
+<td>
+<p>A character which specifies the x axis type.  See <code><a href="../../graphics/html/par.html">par</a></code></p>
+</td></tr>
+<tr valign="top"><td><code>yaxt</code></td>
+<td>
+<p>A character which specifies the y axis type.  See <code><a href="../../graphics/html/par.html">par</a></code></p>
+</td></tr>
+<tr valign="top"><td><code>xlab</code></td>
+<td>
+<p>Label for the x-axis</p>
+</td></tr>
+<tr valign="top"><td><code>ylab</code></td>
+<td>
+<p>Label for the y-axis</p>
+</td></tr>
+<tr valign="top"><td><code>xaxs</code></td>
+<td>
+<p>Must be set to 'i' for appropriate integration into Sushi plots.  See <code><a href="../../graphics/html/par.html">par</a></code></p>
+</td></tr>
+<tr valign="top"><td><code>yaxs</code></td>
+<td>
+<p>Must be set to 'i' for appropriate integration into Sushi plots.  See <code><a href="../../graphics/html/par.html">par</a></code></p>
+</td></tr>
+<tr valign="top"><td><code>bty</code></td>
+<td>
+<p>A character string which determined the type of box which is drawn about plots.  See <code><a href="../../graphics/html/par.html">par</a></code></p>
+</td></tr>
+<tr valign="top"><td><code>border</code></td>
+<td>
+<p>border color drawn around each bed element or density bin.  Set to 'n' for none.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>values to be passed to other functions</p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Sushi_ChIPSeq_severalfactors.bed)
+chrom            = "chr15"
+chromstart      = 72800000
+chromend         = 73100000
+Sushi_ChIPSeq_severalfactors.bed$color = heat.colors(max(Sushi_ChIPSeq_severalfactors.bed$row))[Sushi_ChIPSeq_severalfactors.bed$row]
+plotBed(beddata    = Sushi_ChIPSeq_severalfactors.bed,chrom = chrom,chromstart = chromstart,chromend =chromend,
+        rownumber  = Sushi_ChIPSeq_severalfactors.bed$row, type = "circles",color=Sushi_ChIPSeq_severalfactors.bed$color,row="given",plotbg="grey95",
+        rowlabels=unique(Sushi_ChIPSeq_severalfactors.bed$name),rowlabelcol=unique(Sushi_ChIPSeq_severalfactors.bed$color),rowlabelcex=0.75)
+
+Sushi_ChIPSeq_severalfactors.bed$color = heat.colors(max(Sushi_ChIPSeq_severalfactors.bed$row))[Sushi_ChIPSeq_severalfactors.bed$row]
+
+plotBed(beddata    = Sushi_ChIPSeq_severalfactors.bed,chrom = chrom,chromstart = chromstart,chromend =chromend,
+        rownumber  = Sushi_ChIPSeq_severalfactors.bed$row, type = "region",color=Sushi_ChIPSeq_severalfactors.bed$color,row="given",plotbg="grey95",
+        rowlabels=unique(Sushi_ChIPSeq_severalfactors.bed$name),rowlabelcol=unique(Sushi_ChIPSeq_severalfactors.bed$color),rowlabelcex=0.75)
+
+colors = c("dodgerblue1","firebrick2","violet","yellow",
+        "dodgerblue1","firebrick2","violet","yellow",
+        "dodgerblue1","firebrick2","violet")
+plotBed(beddata    = Sushi_ChIPSeq_severalfactors.bed,chrom = chrom,chromstart = chromstart,chromend =chromend,
+         rownumber  = Sushi_ChIPSeq_severalfactors.bed$row, type = "density",row="supplied",
+         rowlabels=unique(Sushi_ChIPSeq_severalfactors.bed$name),rowlabelcol=colors,rowlabelcex=0.75,
+         palettes=list(
+         colorRampPalette(c("black",colors[1])),
+         colorRampPalette(c("black",colors[2])),
+         colorRampPalette(c("black",colors[3])),
+         colorRampPalette(c("black",colors[4])),
+         colorRampPalette(c("black",colors[5])),
+         colorRampPalette(c("black",colors[6])),
+         colorRampPalette(c("black",colors[7])),
+         colorRampPalette(c("black",colors[8])),
+         colorRampPalette(c("black",colors[9])),
+         colorRampPalette(c("black",colors[10])),
+         colorRampPalette(c("black",colors[11]))))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>Sushi</em> version 1.20.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,87 @@
+01.Introduction         Introduction to the popbio Package
+02.Caswell              Converted Matlab functions from Caswell (2001)
+03.Morris               Converted Matlab functions from Morris and Doak
+                        (2002)
+Kendall                 Find the best Kendall's estimates of mean and
+                        environmental variance for beta-binomial vital
+                        rates.
+LTRE                    Life Table Response Experiment
+QPmat                   Build a projection matrix from a time series of
+                        individuals (or densities) per stage.
+aq.census               Annual census data for Aquilegia in the
+                        southwestern US
+aq.matrix               Create a projection matrix for Aquilegia
+aq.trans                Annual transition data for Aquilegia in the
+                        southwestern US
+betaval                 Generate beta-distributed random numbers
+boot.transitions        Bootstrap observed census transitions
+calathea                Projection matrices for a tropical understory
+                        herb
+colorguide              Plot a simple guide to colors
+countCDFxt              Count-based extinction probabilities and
+                        bootstrap confidence intervals
+damping.ratio           Damping ratio
+eigen.analysis          Eigenvalue and eigenvector analysis of a
+                        projection matrix
+elasticity              Elasticity analysis of a projection matrix
+extCDF                  Count-based extinction time cumulative
+                        distribution function
+fundamental.matrix      Fundamental matrix and age-specific survival
+generation.time         Generation time
+grizzly                 Population sizes of grizzly bears in
+                        Yellowstone from 1959-1997
+head2                   Return the first and last part of a matrix or
+                        dataframe
+hudcorrs                Correlation matrices for Hudsonia vital rates
+hudmxdef                Matrix definition program for Hudsonia vital
+                        rates
+hudsonia                Projection matrices for mountain golden heather
+hudvrs                  Best Kendall estimates of Hudsonia vital rate
+                        means and variances
+image2                  Display a matrix image
+lambda                  Population growth rate
+lnorms                  Generate random lognormal values for fertility
+                        rates
+logi.hist.plot          Plot logistic regression
+matplot2                Plot a matrix
+matrix2                 Square matrices
+mean.list               Calculate mean matrix
+monkeyflower            Projection matrices for monkeyflower
+multiresultm            Incorporate demographic stochasticity into
+                        population projections
+nematode                Population densities for the sugarbeet cyst
+                        nematode
+net.reproductive.rate   Net reproductive rate
+pfister.plot            Create log-log plots of variance vs.
+                        sensitivity and CV vs. elasticity
+pop.projection          Calculate population growth rates by projection
+projection.matrix       Construct projection matrix models using
+                        transition frequency tables
+reproductive.value      Stable stage distribution
+resample                Resample a projection matrix
+secder                  secder
+sensitivity             Sensitivity analysis of a projection matrix
+splitA                  Split a projection matrix into separate T and F
+                        matrices
+stable.stage            Stable stage distribution
+stage.vector.plot       Plot stage vector projections
+stoch.growth.rate       Calculate log stochastic growth rate
+stoch.projection        Simulate stochastic growth from a sequence of
+                        matrices
+stoch.quasi.ext         Calculate quasi-extinction threshold
+stoch.sens              stoch.sens
+stretchbetaval          Generate stretched beta-distributed random
+                        numbers
+teasel                  Projection matrix for teasel
+test.census             Census data for hypothetical plant
+tortoise                Projection matrices for desert tortoise
+var2                    Calculate a variance matrix
+varEst                  Estimate the variance of beta-binomial vital
+                        rates using approximation method of Akcakaya
+vitalsens               Vital rate sensitivities and elasticities
+vitalsim                Calculate stochastic growth rate and extinction
+                        time CDF using vital rates with within-year,
+                        auto-, and cross-correlations
+whale                   Projection matrix for killer whale
+woodpecker              Survirvorship data for adult and juvenile Acorn
+                        Woodpeckers

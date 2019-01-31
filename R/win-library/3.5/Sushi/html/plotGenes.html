@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: plots gene structure or transcript structures</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for plotGenes {Sushi}"><tr><td>plotGenes {Sushi}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>plots gene structure or transcript structures</h2>
+
+<h3>Description</h3>
+
+<p>plots gene structure or transcript structures
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+plotGenes(geneinfo = NULL, chrom = NULL, chromstart = NULL,
+  chromend = NULL, col = SushiColors(2)(2)[1], bheight = 0.3,
+  lheight = 0.3, bentline = TRUE, packrow = TRUE, maxrows = 10000,
+  colorby = NULL, colorbyrange = NULL,
+  colorbycol = colorRampPalette(c("blue", "red")), types = "exon",
+  plotgenetype = "box", arrowlength = 0.005, wigglefactor = 0.05,
+  labeltext = TRUE, labeloffset = 0.4, fontsize = 0.7, fonttype = 2,
+  labelat = "middle", ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>geneinfo</code></td>
+<td>
+<p>gene info stored in a bed-like format.  If NULL it will look up genes in the region using biomart (with biomart=&quot;ensembl&quot; and dataset=&quot;hsapiens_gene_ensembl&quot;). See also <code><a href="../../biomaRt/html/useMart.html">useMart</a></code></p>
+</td></tr>
+<tr valign="top"><td><code>chrom</code></td>
+<td>
+<p>chromosome of region to be plotted</p>
+</td></tr>
+<tr valign="top"><td><code>chromstart</code></td>
+<td>
+<p>start position</p>
+</td></tr>
+<tr valign="top"><td><code>chromend</code></td>
+<td>
+<p>end position</p>
+</td></tr>
+<tr valign="top"><td><code>col</code></td>
+<td>
+<p>single value or vector specifying colors of gene structures</p>
+</td></tr>
+<tr valign="top"><td><code>bheight</code></td>
+<td>
+<p>the height of the boxes drawn for exons</p>
+</td></tr>
+<tr valign="top"><td><code>lheight</code></td>
+<td>
+<p>the height of the bent line is bent is set to TRUE</p>
+</td></tr>
+<tr valign="top"><td><code>bentline</code></td>
+<td>
+<p>TRUE/FALSE indicating whether lines between exons should be bent</p>
+</td></tr>
+<tr valign="top"><td><code>packrow</code></td>
+<td>
+<p>TRUE / FALSE indicating whether genes should be packed or whether each gene should be plotted on its own row</p>
+</td></tr>
+<tr valign="top"><td><code>maxrows</code></td>
+<td>
+<p>The maximum number of rows to plot on the y-axis</p>
+</td></tr>
+<tr valign="top"><td><code>colorby</code></td>
+<td>
+<p>vector to scale colors by</p>
+</td></tr>
+<tr valign="top"><td><code>colorbyrange</code></td>
+<td>
+<p>the range of values to apply the color scale to.  Values outside that range will be set to the limits of the range.</p>
+</td></tr>
+<tr valign="top"><td><code>colorbycol</code></td>
+<td>
+<p>palette to apply color scale to (only valid when colorby is not NULL)</p>
+</td></tr>
+<tr valign="top"><td><code>types</code></td>
+<td>
+<p>single value or vector specifying types of elements (acceptable values are 'exon','utr')</p>
+</td></tr>
+<tr valign="top"><td><code>plotgenetype</code></td>
+<td>
+<p>String specifying whether the genes should resemble a 'box' or a 'arrow'</p>
+</td></tr>
+<tr valign="top"><td><code>arrowlength</code></td>
+<td>
+<p>value (between 0 and 1) specifying the length of the tail of each arrow as a fraction of the total plot width (only valid when plotgenetype is set to &quot;arrow&quot;)</p>
+</td></tr>
+<tr valign="top"><td><code>wigglefactor</code></td>
+<td>
+<p>the fraction of the plot to leave blank on either side of each element to avoid overcrowding.</p>
+</td></tr>
+<tr valign="top"><td><code>labeltext</code></td>
+<td>
+<p>TRUE/FALSE indicating whether genes should be labeled</p>
+</td></tr>
+<tr valign="top"><td><code>labeloffset</code></td>
+<td>
+<p>value (between 0 and 1) specifying the vertical offset of gene labels</p>
+</td></tr>
+<tr valign="top"><td><code>fontsize</code></td>
+<td>
+<p>font size of gene labels</p>
+</td></tr>
+<tr valign="top"><td><code>fonttype</code></td>
+<td>
+<p>font type of gene labels</p>
+</td></tr>
+<tr valign="top"><td><code>labelat</code></td>
+<td>
+<p>postion along gene to place labels (acceptable values are &quot;middle&quot;,&quot;start&quot;,and &quot;end&quot;)</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>values to be passed to <code><a href="../../graphics/html/plot.html">plot</a></code></p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Sushi_genes.bed)
+
+chrom            = "chr15"
+chromstart       = 72998000
+chromend         = 73020000
+chrom_biomart    = 15
+
+plotGenes(Sushi_genes.bed,chrom_biomart,chromstart,chromend ,types=Sushi_genes.bed$type,
+     maxrows=1,height=0.5,plotgenetype="arrow",bentline=FALSE,col="blue",
+     labeloffset=1,fontsize=1.2)
+
+labelgenome( chrom, chromstart,chromend,side=1,scipen=20,n=3,scale="Mb",line=.18,chromline=.5,scaleline=0.5)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>Sushi</em> version 1.20.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

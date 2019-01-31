@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Adds genome coordinates to the x-axis of a Sushi plot</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for labelgenome {Sushi}"><tr><td>labelgenome {Sushi}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Adds genome coordinates to the x-axis of a Sushi plot</h2>
+
+<h3>Description</h3>
+
+<p>Adds genome coordinates to the x-axis of a Sushi plot
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+labelgenome(chrom, chromstart, chromend, genome = NULL, space = 0.01,
+  scale = "bp", side = 1, scipen = 20, n = 5, chromfont = 2,
+  chromadjust = 0.015, chromcex = 1, chromline = 0.5, scalefont = 2,
+  scaleadjust = 0.985, scalecex = 1, scaleline = 0.5, line = 0.18,
+  edgeblankfraction = 0.1, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>chrom</code></td>
+<td>
+<p>chromosome to plot</p>
+</td></tr>
+<tr valign="top"><td><code>chromstart</code></td>
+<td>
+<p>start position</p>
+</td></tr>
+<tr valign="top"><td><code>chromend</code></td>
+<td>
+<p>end position</p>
+</td></tr>
+<tr valign="top"><td><code>genome</code></td>
+<td>
+<p>a genome object (2 columns: column 1 = chromosome name, column 2 = length of chromosome). Only for multi chromosomal plots</p>
+</td></tr>
+<tr valign="top"><td><code>space</code></td>
+<td>
+<p>the space in between each chromosome as a fraction of the width of the plot.  Only for multi chromosomal plots</p>
+</td></tr>
+<tr valign="top"><td><code>scale</code></td>
+<td>
+<p>Scale of the plot ('bp','Kb','Mb')</p>
+</td></tr>
+<tr valign="top"><td><code>side</code></td>
+<td>
+<p>Side of the scale to add the plot to.  Only tested for sides 1 and 3.</p>
+</td></tr>
+<tr valign="top"><td><code>scipen</code></td>
+<td>
+<p>higher values decrease the likelihood of using scientific for the position labels.</p>
+</td></tr>
+<tr valign="top"><td><code>n</code></td>
+<td>
+<p>Desired number of ticks</p>
+</td></tr>
+<tr valign="top"><td><code>chromfont</code></td>
+<td>
+<p>font type of chromosome label</p>
+</td></tr>
+<tr valign="top"><td><code>chromadjust</code></td>
+<td>
+<p>position, as a fraction of the width of the plot, of the chomosome label</p>
+</td></tr>
+<tr valign="top"><td><code>chromcex</code></td>
+<td>
+<p>font size of the chomosome label</p>
+</td></tr>
+<tr valign="top"><td><code>chromline</code></td>
+<td>
+<p>vertical offset of the chomosome label</p>
+</td></tr>
+<tr valign="top"><td><code>scalefont</code></td>
+<td>
+<p>font type of scale label</p>
+</td></tr>
+<tr valign="top"><td><code>scaleadjust</code></td>
+<td>
+<p>position, as a fraction of the width of the plot, of the scale label</p>
+</td></tr>
+<tr valign="top"><td><code>scalecex</code></td>
+<td>
+<p>font size of the scale label</p>
+</td></tr>
+<tr valign="top"><td><code>scaleline</code></td>
+<td>
+<p>vertical offset of the scale label</p>
+</td></tr>
+<tr valign="top"><td><code>line</code></td>
+<td>
+<p>vertical offset of position labels</p>
+</td></tr>
+<tr valign="top"><td><code>edgeblankfraction</code></td>
+<td>
+<p>percent of the edges to leave black for chromosome and scale labels</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>values to be passed to <code><a href="../../graphics/html/axis.html">axis</a></code></p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Sushi_DNaseI.bedgraph)
+# set the genomic regions
+
+plotBedgraph(Sushi_DNaseI.bedgraph,chrom="chr11",chromstart=1650000,chromend=2350000,colorbycol=SushiColors(7))
+labelgenome(chrom="chr11",chromstart=1650000,chromend=2350000,side=1,n=4,scale="Mb")
+axis(side=2,las=2,tcl=.2)
+mtext("Read Depth",side=2,line=1.75,cex=.75,font=2)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>Sushi</em> version 1.20.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

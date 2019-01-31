@@ -1,0 +1,140 @@
+---
+title: "First R markdown file"
+author: "Jessica Cole"
+date: "September 4, 2018"
+output:
+  html_document: 
+    highlight: tango
+    keep_md: yes
+    number_sections: yes
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Hello world!   What happens to funny spacing?        Is it preserved?
+
+First line.   
+Second line.   
+Third line.    
+
+italic *this way*
+
+bold face **like this**
+
+subscript~lower~
+
+superscript^raised^
+
+strikethrough ~~for mistakes~~
+
+# First Level
+
+## Second Level
+
+###Third Level
+
+...
+
+######Six Level!
+
+
+lists are easy
+
+- first item
+- second item
+- third item, and yes it will keep everything aligned just as it shuld be for longer text!
+    - subitem
+        - sub-subitem
+        
+>All musicians are subconsciously matemiticians
+
+Thelonious Monk
+
+Use single bactick for in-line emphasis `  like this`.
+
+Shows literal text as `3 + pi`.
+
+Start with r to get it to run r code this `r 3 + pi`. 
+
+
+### Code fencing
+
+```
+# Comments are important!
+pred <- seq(1,10) # make a vector of intergers from one to 10
+response <- runif(10)
+print(response)
+
+# now plot a graph
+plot(x=pred,
+     y=response,
+     type="b")
+```
+
+```{r, eval=FALSE, echo=TRUE}
+# Comments are important!
+pred <- seq(1,10) # make a vector of intergers from one to 10
+response <- runif(10)
+print(response)
+
+# now plot a graph
+plot(x=pred,
+     y=response,
+     type="b")
+```
+     
+## Links
+
+http://example.com
+
+[linked phrase](http://example.com)
+
+A [linked phrase] [id]
+
+[id]: http://example.com/ "Title"
+
+
+![alt text][id] 
+
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+
+```{r, echo=TRUE, results='asis'}
+library(knitr)
+kable(head(iris))
+```
+
+## Creating equations with`LaTex`
+
+An `inline` equations is bracketed by single dollar signs $3 + 5 = 8$ like this.
+
+For more complex equations, we will render them on a single line by using a double dollar sign to bracket them:
+
+$$3 + 5 = 8$$
+
+Keeps this as a stand-alone piece.
+
+Subscripts as follows:
+
+$$H_0 = Z_{a + b_{3z}}$$
+
+## Fractions and Greek symbols
+
+$$\alpha=\frac{\beta}{\delta + \gamma_{x=3}}$$
+
+## Summation sign
+
+$$z=\sum_{i=1}^{J-1}{K_1}$$
+
+## Escaping backslash character
+
+$$ \backslash \alpha \le b \backslash$$
+
+## Mixing plain text in LaTex
+
+$$P(\mbox{Occurrence of Species A})=Z$$

@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: plots a Manhattan plot</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for plotManhattan {Sushi}"><tr><td>plotManhattan {Sushi}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>plots a Manhattan plot</h2>
+
+<h3>Description</h3>
+
+<p>plots a Manhattan plot
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+plotManhattan(bedfile, chrom = NULL, chromstart = NULL, chromend = NULL,
+  pvalues, genome = NULL, col = SushiColors(5), space = 0.01,
+  ymax = 1.04, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>bedfile</code></td>
+<td>
+<p>bedfile for Manhattan plot</p>
+</td></tr>
+<tr valign="top"><td><code>chrom</code></td>
+<td>
+<p>chromosome of region to be plotted</p>
+</td></tr>
+<tr valign="top"><td><code>chromstart</code></td>
+<td>
+<p>start position</p>
+</td></tr>
+<tr valign="top"><td><code>chromend</code></td>
+<td>
+<p>end position</p>
+</td></tr>
+<tr valign="top"><td><code>pvalues</code></td>
+<td>
+<p>pvalues to be used for plotting (will be converted to -log(10) space)</p>
+</td></tr>
+<tr valign="top"><td><code>genome</code></td>
+<td>
+<p>A genome object (2 columns: column 1 = chromosome name, column 2 = length of chromosome). Required if plotting multiple chromosomes at once.</p>
+</td></tr>
+<tr valign="top"><td><code>col</code></td>
+<td>
+<p>single colors, vector of colors, or color palette for coloring points</p>
+</td></tr>
+<tr valign="top"><td><code>space</code></td>
+<td>
+<p>the space in between each chromosome as a fraction of the width of the plot</p>
+</td></tr>
+<tr valign="top"><td><code>ymax</code></td>
+<td>
+<p>fraction of max y value to set as height of plot.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Arguments to be passed to methods such as <code><a href="../../graphics/html/plot.html">plot</a></code></p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Sushi_GWAS.bed)
+data(Sushi_hg18_genome)
+
+chrom1            = "chr11"
+chromstart1       = 500000
+chromend1         = 5050000
+
+plotManhattan(bedfile=Sushi_GWAS.bed,pvalues=Sushi_GWAS.bed[,5],genome=Sushi_hg18_genome,col=topo.colors,cex=0.75)
+labelgenome(genome=Sushi_hg18_genome,side=1,scipen=20,n=4,scale="Mb",edgeblankfraction=0.20,line=.18,chromline=.5,scaleline=0.5)
+axis(side=2,las=2,tcl=.2)
+mtext("log10(P)",side=2,line=1.75,cex=.75,font=2)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>Sushi</em> version 1.20.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

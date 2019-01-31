@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: plots HiC interactio matrix</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for plotHic {Sushi}"><tr><td>plotHic {Sushi}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>plots HiC interactio matrix</h2>
+
+<h3>Description</h3>
+
+<p>plots HiC interactio matrix
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+plotHic(hicdata, chrom, chromstart, chromend, max_y = 30, zrange = NULL,
+  palette = SushiColors(7), flip = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>hicdata</code></td>
+<td>
+<p>interaction matrix representing HiC data.  Row and column names should be postions along a chromosome</p>
+</td></tr>
+<tr valign="top"><td><code>chrom</code></td>
+<td>
+<p>chromosome of region to be plotted</p>
+</td></tr>
+<tr valign="top"><td><code>chromstart</code></td>
+<td>
+<p>start position</p>
+</td></tr>
+<tr valign="top"><td><code>chromend</code></td>
+<td>
+<p>end position</p>
+</td></tr>
+<tr valign="top"><td><code>max_y</code></td>
+<td>
+<p>The maximum bin distance to plot</p>
+</td></tr>
+<tr valign="top"><td><code>zrange</code></td>
+<td>
+<p>The range of interaction scores to plot (more extreme value will be set to the max or min)</p>
+</td></tr>
+<tr valign="top"><td><code>palette</code></td>
+<td>
+<p>color palette to use for representing interaction scores</p>
+</td></tr>
+<tr valign="top"><td><code>flip</code></td>
+<td>
+<p>TRUE/FALSE whether plot should be flipped over the x-axis</p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Sushi_HiC.matrix)
+
+chrom            = "chr11"
+chromstart       = 500000
+chromend         = 5050000
+
+phic = plotHic(Sushi_HiC.matrix,chrom,chromstart,chromend,max_y = 20,zrange=c(0,28),palette = topo.colors,flip=FALSE)
+
+labelgenome(chrom,chromstart,chromend,side=1,scipen=20,n=4,scale="Mb",edgeblankfraction=0.20,line=.18,chromline=.5,scaleline=0.5)
+
+addlegend(phic[[1]],palette=phic[[2]],title="score",side="right",bottominset=0.4,topinset=0,xoffset=-.035,labelside="left",width=0.025,title.offset=0.035)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>Sushi</em> version 1.20.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

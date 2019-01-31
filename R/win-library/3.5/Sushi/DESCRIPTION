@@ -1,0 +1,21 @@
+Package: Sushi
+Type: Package
+Title: Tools for visualizing genomics data
+Description: Flexible, quantitative, and integrative genomic visualizations for publication-quality multi-panel figures
+Version: 1.20.0
+Date: 2015-05-06
+Author: Douglas H Phanstiel <dphansti@stanford.edu>
+Maintainer: Douglas H Phanstiel <dphansti@stanford.edu>
+biocViews: DataRepresentation, Visualization, Genetics, Sequencing,
+        Infrastructure, HiC
+License: GPL (>= 2)
+Depends: R (>= 2.10), zoo,biomaRt
+Imports: graphics, grDevices
+git_url: https://git.bioconductor.org/packages/Sushi
+git_branch: RELEASE_3_8
+git_last_commit: fea3c6c
+git_last_commit_date: 2018-10-30
+Date/Publication: 2018-10-30
+NeedsCompilation: no
+Packaged: 2018-10-31 02:19:13 UTC; biocbuild
+Built: R 3.5.1; ; 2018-10-31 11:53:25 UTC; windows

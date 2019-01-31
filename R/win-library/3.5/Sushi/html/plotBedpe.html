@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: plots data stored in bed file format</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for plotBedpe {Sushi}"><tr><td>plotBedpe {Sushi}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>plots data stored in bed file format</h2>
+
+<h3>Description</h3>
+
+<p>plots data stored in bed file format
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+plotBedpe(bedpedata, chrom, chromstart, chromend, heights, color = "black",
+  colorby = NULL, colorbycol = NULL, colorbyrange = NULL, border = NULL,
+  lwdby = NULL, lwdrange = c(1, 5), offset = 0, flip = FALSE, lwd = 1,
+  xaxt = "n", yaxt = "n", bty = "n", plottype = "loops",
+  maxrows = 10000, height = 0.3, ymax = 1.04, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>bedpedata</code></td>
+<td>
+<p>bed paired end data to be plotted</p>
+</td></tr>
+<tr valign="top"><td><code>chrom</code></td>
+<td>
+<p>chromosome of region to be plotted</p>
+</td></tr>
+<tr valign="top"><td><code>chromstart</code></td>
+<td>
+<p>start position</p>
+</td></tr>
+<tr valign="top"><td><code>chromend</code></td>
+<td>
+<p>end position</p>
+</td></tr>
+<tr valign="top"><td><code>heights</code></td>
+<td>
+<p>single value or vector specifying the height of the arches to be plotted (only valid when plottype is set to &quot;loops&quot; )</p>
+</td></tr>
+<tr valign="top"><td><code>color</code></td>
+<td>
+<p>single value or vector specifying colors of bedpe elements</p>
+</td></tr>
+<tr valign="top"><td><code>colorby</code></td>
+<td>
+<p>vector to scale colors by</p>
+</td></tr>
+<tr valign="top"><td><code>colorbycol</code></td>
+<td>
+<p>palette to apply color scale to (only valid when colorby is not NULL)</p>
+</td></tr>
+<tr valign="top"><td><code>colorbyrange</code></td>
+<td>
+<p>the range of values to apply the color scale to.  Values outside that range will be set to the limits of the range.</p>
+</td></tr>
+<tr valign="top"><td><code>lwdby</code></td>
+<td>
+<p>vector to scale line widths by</p>
+</td></tr>
+<tr valign="top"><td><code>lwdrange</code></td>
+<td>
+<p>the range of values to apply the line width scale to.  Values outside that range will be set to the limits of the range.</p>
+</td></tr>
+<tr valign="top"><td><code>offset</code></td>
+<td>
+<p>offset of bedpe elements from the x-axis</p>
+</td></tr>
+<tr valign="top"><td><code>flip</code></td>
+<td>
+<p>TRUE/FALSE whether the plot should be flipped over the x-axis</p>
+</td></tr>
+<tr valign="top"><td><code>lwd</code></td>
+<td>
+<p>linewidth for bedpe elements (only valid when colorby is not NULL)</p>
+</td></tr>
+<tr valign="top"><td><code>xaxt</code></td>
+<td>
+<p>A character which specifies the x axis type.  See <code><a href="../../graphics/html/par.html">par</a></code></p>
+</td></tr>
+<tr valign="top"><td><code>yaxt</code></td>
+<td>
+<p>A character which specifies the y axis type.  See <code><a href="../../graphics/html/par.html">par</a></code></p>
+</td></tr>
+<tr valign="top"><td><code>bty</code></td>
+<td>
+<p>A character string which determined the type of box which is drawn about plots.  See <code><a href="../../graphics/html/par.html">par</a></code></p>
+</td></tr>
+<tr valign="top"><td><code>plottype</code></td>
+<td>
+<p>type of plot (acceptable values are 'loops', 'ribbons', or 'lines')</p>
+</td></tr>
+<tr valign="top"><td><code>maxrows</code></td>
+<td>
+<p>The maximum number of rows to plot on the y-axis</p>
+</td></tr>
+<tr valign="top"><td><code>height</code></td>
+<td>
+<p>the height of the boxes at either end of a bedpe element if plottype is set to 'lines'. Typical vaues range form 0 to 1.  (only valid when plottype is set to 'lines')</p>
+</td></tr>
+<tr valign="top"><td><code>ymax</code></td>
+<td>
+<p>fraction of max y value to set as height of plot. Only applies when plottype is set to 'loops' or 'ribbons'</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>values to be passed to <code><a href="../../graphics/html/plot.html">plot</a></code></p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Sushi_5C.bedpe)
+
+chrom            = "chr11"
+chromstart       = 1650000
+chromend         = 2350000
+pbpe = plotBedpe(Sushi_5C.bedpe,chrom,chromstart,chromend,heights = Sushi_5C.bedpe$score,offset=0,flip=FALSE,bty='n',
+lwd=1,plottype="ribbons",colorby=Sushi_5C.bedpe$samplenumber,colorbycol=topo.colors,border="black")
+labelgenome(chrom, chromstart,chromend,side=1,scipen=20,n=3,scale="Mb",line=.18,chromline=.5,scaleline=0.5)
+legend("topright",inset =0.01,legend=c("K562","HeLa","GM12878"),col=c(topo.colors(3)),pch=19,bty='n',text.font=2)
+axis(side=2,las=2,tcl=.2)
+mtext("Z-score",side=2,line=1.75,cex=.75,font=2)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>Sushi</em> version 1.20.0 <a href="00Index.html">Index</a>]</div>
+</body></html>
